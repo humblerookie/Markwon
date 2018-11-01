@@ -121,9 +121,6 @@ public class SpannableMarkdownVisitor extends AbstractVisitor {
 
         if (hasNext(blockQuote)) {
             newLine();
-            if (blockQuoteIndent == 0) {
-                builder.append('\n');
-            }
         }
     }
 
@@ -202,9 +199,9 @@ public class SpannableMarkdownVisitor extends AbstractVisitor {
 
         if (hasNext(node)) {
             newLine();
-            if (listLevel == 0 && blockQuoteIndent == 0) {
+           /* if (listLevel == 0 && blockQuoteIndent == 0) {
                 builder.append('\n');
-            }
+            }*/
         }
     }
 
@@ -256,7 +253,6 @@ public class SpannableMarkdownVisitor extends AbstractVisitor {
 
         if (hasNext(thematicBreak)) {
             newLine();
-            builder.append('\n');
         }
     }
 
